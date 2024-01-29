@@ -37,8 +37,7 @@ class LoginController extends BaseController<AuthRepository> {
         User userData = User.fromJson(response.data?.result);
         AppStorage.setUser(userData);
         LoadingUtils.hideLoader();
-        // Get.offAndToNamed(Routes.HOME);
-        Get.offAndToNamed(Routes.POLLING_DAY_PAGE);
+        Get.offAndToNamed(Routes.HOME);
       } else {
         if (LoadingUtils.isLoaderShowing) LoadingUtils.hideLoader();
         AppUtils.showSnackBar('${response.error?.message}');

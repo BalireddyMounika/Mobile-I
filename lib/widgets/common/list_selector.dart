@@ -94,8 +94,7 @@ class ListSelector extends StatelessWidget {
             )
           ]);
         } else {
-          // AppUtils.showSnackBar(msgWhenListDisable);
-          AppUtils.showSnackBar("List is Disabled");
+          AppUtils.showSnackBar(msgWhenListDisable);
         }
       },
       child: AbsorbPointer(

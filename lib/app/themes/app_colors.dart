@@ -18,5 +18,7 @@ class AppColors {
 
   static const purple = Color(0xff0140FE);
 
+
   static Color selectedColor = const Color(0xffCADEE9);
+
 }

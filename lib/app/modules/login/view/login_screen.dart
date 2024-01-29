@@ -24,8 +24,7 @@ class LoginView extends GetView<LoginController> {
               // crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Container(
-                    height: 180,
-                    child: Image.asset("assets/images/ivin_logo.png")),
+                    height: 209, child: Image.asset("assets/images/login.png")),
                 Text(
                   AppStrings.login,
                   style: AppStyles.tsSecondaryRegular18

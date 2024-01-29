@@ -97,17 +97,17 @@ class AnalyticRepository extends BaseRepository {
     required String pollingStationName,
     required String sectionName,
     required String voterId,
-    // required String page,
-    // required String perPage,
+    required String page,
+    required String perPage,
     required String cast,
     required String contactNumber,
-    // required String partyInclination,
+    required String partyInclination,
     required String token,
   }) async {
     final response = await controller.get(
         token: token,
         path:
-            '${URLs.getDataAnalyticsBysearchfilter}/$constituency/$pollingStationName/$gender/$name/$sectionName/$lastName/$home/$mandal/$cast/$contactNumber/$voterId/');
+            '${URLs.getDataAnalyticsBysearchfilterV2}/$constituency/$pollingStationName/$gender/$name/$sectionName/$lastName/$home/$mandal/$voterId/$page/$perPage/$cast/$contactNumber/$partyInclination');
     return response is APIException
         ? RepoResponse(error: response)
         : RepoResponse(data: GenericResponse.fromJson(response));

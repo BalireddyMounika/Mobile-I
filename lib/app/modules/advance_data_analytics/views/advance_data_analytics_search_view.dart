@@ -42,9 +42,8 @@ class AdvanceDataAnalyticsSearchView
                         constituencyName: constituency);
                   },
                   title: AppStrings.constituency,
-                  data: const ["Madugula"],
+                  data: const ["Madugula", "Anakapalle"],
                   child: CommonInputField(
-                    borderSide: false,
                     wrapper: controller.constituency,
                     hintText: "Constituency Selection *",
                     suffixIcon: const Icon(Icons.keyboard_arrow_down),
@@ -63,7 +62,6 @@ class AdvanceDataAnalyticsSearchView
                     title: AppStrings.mandal,
                     data: controller.mandalList,
                     child: CommonInputField(
-                      borderSide: false,
                       wrapper: controller.mandal,
                       hintText: "Mandal Selection *",
                       suffixIcon: const Icon(Icons.keyboard_arrow_down),
@@ -82,7 +80,6 @@ class AdvanceDataAnalyticsSearchView
                     title: AppStrings.pollingstationname,
                     data: controller.polingStationList,
                     child: CommonInputField(
-                      borderSide: false,
                       wrapper: controller.pollingstationnames,
                       hintText: "Polling Station Selection *",
                       suffixIcon: const Icon(Icons.keyboard_arrow_down),
@@ -105,7 +102,6 @@ class AdvanceDataAnalyticsSearchView
                     title: AppStrings.sectionnameandnumber,
                     data: controller.sectionNameAndNumberList,
                     child: CommonInputField(
-                      borderSide: false,
                       wrapper: controller.sectionnameandnumber,
                       hintText: "Section Name and Number",
                       suffixIcon: const Icon(Icons.keyboard_arrow_down),
@@ -116,7 +112,6 @@ class AdvanceDataAnalyticsSearchView
                   height: Dimens.gapX3,
                 ),
                 CommonInputField(
-                  borderSide: false,
                   wrapper: controller.name,
                   hintText: "Name (min 3 Letters)",
                 ),
@@ -124,7 +119,6 @@ class AdvanceDataAnalyticsSearchView
                   height: Dimens.gapX3,
                 ),
                 CommonInputField(
-                  borderSide: false,
                   wrapper: controller.lastname,
                   hintText: "Enter Voter Last Name",
                 ),
@@ -132,7 +126,6 @@ class AdvanceDataAnalyticsSearchView
                   height: Dimens.gapX3,
                 ),
                 CommonInputField(
-                  borderSide: false,
                   wrapper: controller.last_name_like_search,
                   hintText: "Last Name Like Search",
                 ),
@@ -140,7 +133,6 @@ class AdvanceDataAnalyticsSearchView
                   height: Dimens.gapX3,
                 ),
                 CommonInputField(
-                  borderSide: false,
                   wrapper: controller.house_no,
                   hintText: "House Number",
                 ),
@@ -148,7 +140,6 @@ class AdvanceDataAnalyticsSearchView
                   height: Dimens.gapX3,
                 ),
                 CommonInputField(
-                  borderSide: false,
                   wrapper: controller.voter_id,
                   hintText: "Voter ID",
                 ),
@@ -189,7 +180,7 @@ class AdvanceDataAnalyticsSearchView
                   ],
                 ),
               ],
-            ).paddingSymmetric(horizontal: Dimens.paddingX2),
+            ).paddingSymmetric(horizontal: Dimens.paddingX3),
           ),
         ),
         bottomNavigationBar: Row(
@@ -213,7 +204,7 @@ class AdvanceDataAnalyticsSearchView
               ),
             ),
           ],
-        ).paddingSymmetric(horizontal: Dimens.paddingX2),
+        ).paddingSymmetric(horizontal: Dimens.paddingX3),
       ),
     );
   }

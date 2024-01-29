@@ -7,7 +7,6 @@ class User {
     this.password,
     this.mobileNumber,
     this.updatedOn,
-    this.userType,
   });
 
   User.fromJson(dynamic json) {
@@ -18,7 +17,6 @@ class User {
     password = json['Password'];
     mobileNumber = json['MobileNumber'];
     updatedOn = json['UpdatedOn'];
-    userType = json['UserType'];
     bearerToken = json['Bearer_Token'];
   }
   int? id;
@@ -29,7 +27,6 @@ class User {
   String? mobileNumber;
   String? updatedOn;
   String? bearerToken;
-  String? userType;
 
   Map<String, dynamic> toJson() {
     final map = <String, dynamic>{};
@@ -41,7 +38,6 @@ class User {
     map['MobileNumber'] = mobileNumber;
     map['UpdatedOn'] = updatedOn;
     map['Bearer_Token'] = bearerToken;
-    map['UserType'] = userType;
     return map;
   }
 }

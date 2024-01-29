@@ -6,6 +6,7 @@ import '../../app/data/values/dimens.dart';
 import '../../app/modules/profile/controller/profile_controller.dart';
 import '../../app/routes/app_routes.dart';
 
+
 class CustomProfileStepper extends StatelessWidget {
   ProfileController controller = Get.put(ProfileController());
 
@@ -27,16 +28,13 @@ class CustomProfileStepper extends StatelessWidget {
                   Get.toNamed(Routes.PROFILE_ABOUT_YOU, arguments: controller);
                   break;
                 case 1:
-                  Get.toNamed(Routes.PROFILE_CANDIDATE_INFO,
-                      arguments: controller);
+                  Get.toNamed(Routes.PROFILE_CANDIDATE_INFO, arguments: controller);
                   break;
                 case 2:
-                  Get.toNamed(Routes.PROFILE_POLITICAL_HISTORY,
-                      arguments: controller);
+                  Get.toNamed(Routes.PROFILE_POLITICAL_HISTORY, arguments: controller);
                   break;
                 case 3:
-                  Get.toNamed(Routes.PROFILE_SOCIAL_MEDIA,
-                      arguments: controller);
+                  Get.toNamed(Routes.PROFILE_SOCIAL_MEDIA, arguments: controller);
                   break;
                 case 4:
                   Get.toNamed(Routes.PROFILE_EC_STATUS, arguments: controller);

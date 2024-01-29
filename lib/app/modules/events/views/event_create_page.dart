@@ -409,18 +409,17 @@ class EventData extends StatelessWidget {
             Obx(() => controller.contactLists.isEmpty
                 ? const Text("")
                 : Column(
-                    children:
-                        List.generate(controller.contactLists.length, (index) {
-                      return ListTile(
-                        title: Text(controller.contactLists[index]),
-                        trailing: IconButton(
-                            onPressed: () {
-                              controller.onRemoveContactsList(index);
-                            },
-                            icon: const Icon(Icons.cancel)),
-                      );
-                    }, growable: true),
-                  )),
+              children:List.generate(controller.contactLists.length, (index){
+                return ListTile(
+                  title: Text(controller.contactLists[index]),
+                  trailing: IconButton(
+                      onPressed: () {
+                        controller.onRemoveContactsList(index);
+                      },
+                      icon: const Icon(Icons.cancel)),
+                );
+              },growable: true),
+            )),
             const CommonEventTitle(text: 'Virtual/Streaming Link'),
             Padding(
               padding: const EdgeInsets.only(

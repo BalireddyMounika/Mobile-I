@@ -7,7 +7,8 @@ import 'package:prasada_political_portfolio/utils/helper/exception_handler.dart'
 
 class AuthRepository extends BaseRepository {
   Future<RepoResponse<GenericResponse>> login(LoginRequest data) async {
-    final response = await controller.post(path: URLs.login, data: data.toJson());
+    final response = await controller.post(
+        token: URLs.token, path: URLs.login, data: data.toJson());
     return response is APIException
         ? RepoResponse(error: response)
         : RepoResponse(data: GenericResponse.fromJson(response));

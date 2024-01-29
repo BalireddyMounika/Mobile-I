@@ -2,7 +2,6 @@ import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get_storage/get_storage.dart';
 import 'package:prasada_political_portfolio/app/data/model/dto/RepoResponse.dart';
 import 'package:prasada_political_portfolio/app/data/model/response/VoterResponse.dart';
 import 'package:prasada_political_portfolio/app/data/model/response/generic_response.dart';
@@ -108,8 +107,8 @@ class AdvanceDataAnalyticSearchController
       sectionnameandnumber.controller.clear();
       LoadingUtils.showLoader();
       await getMandal(constituencyName: constituencyName);
+      LoadingUtils.hideLoader();
     }
-    LoadingUtils.hideLoader();
   }
 
   Future<void> onSelectMandal({required String mandalName}) async {
@@ -119,8 +118,8 @@ class AdvanceDataAnalyticSearchController
       sectionnameandnumber.controller.clear();
       LoadingUtils.showLoader();
       await getPolingStation(mandalName: mandalName);
+      LoadingUtils.hideLoader();
     }
-    LoadingUtils.hideLoader();
   }
 
   Future<void> onSelectPolingStation(
@@ -128,11 +127,11 @@ class AdvanceDataAnalyticSearchController
     if (polingStationNameAndNumber != pollingstationnames.controller.text) {
       pollingstationnames.controller.text = polingStationNameAndNumber;
       sectionnameandnumber.controller.clear();
-      LoadingUtils.showLoader();
+      LoadingUtils.hideLoader();
       await getSectionNameAndNumber(
           polingStationName: polingStationNameAndNumber);
+      LoadingUtils.hideLoader();
     }
-    LoadingUtils.hideLoader();
   }
 
   onCheckedSelectAll() {
@@ -223,7 +222,7 @@ class AdvanceDataAnalyticSearchController
       List sectionData = response.data?.result as List;
       sectionNameAndNumberList.clear();
       for (var e in sectionData) {
-        e == null ? print("null") : sectionNameAndNumberList.add(e);
+        sectionNameAndNumberList.add(e);
       }
       sectionNameAndNumberList.refresh();
     } else {
@@ -256,13 +255,13 @@ class AdvanceDataAnalyticSearchController
         voterId: voter_id.controller.text.isNotEmpty
             ? voter_id.controller.text
             : 'null',
-        // page: currentPage.toString(),
-        // perPage: '50',
+        page: currentPage.toString(),
+        perPage: '50',
         cast: selectedFilterOptionList.contains('Cast').toString(),
         contactNumber:
             selectedFilterOptionList.contains('Contact number').toString(),
-        // partyInclination:
-        //     selectedFilterOptionList.contains('Party inclination').toString(),
+        partyInclination:
+            selectedFilterOptionList.contains('Party inclination').toString(),
       );
       LoadingUtils.hideLoader();
       if (response.data?.status == 200 || response.data?.status == 201) {
@@ -289,53 +288,8 @@ class AdvanceDataAnalyticSearchController
     }
   }
 
-  void getFilterVoterList() {
-    tempVoterDataList.clear();
-
-    voterDataList.forEach((element) {
-      bool hasCaste = element.caste != null;
-      bool hasContactNumber = element.contactNumber != null;
-      bool hasPartyInclination = element.partyInclinationId != null;
-
-      if (selectedFilterOptionList.isNotEmpty) {
-        if (selectedFilterOptionList.contains("Caste") &&
-            selectedFilterOptionList.contains("Contact number") &&
-            selectedFilterOptionList.contains("Party inclination")) {
-          if (hasCaste && hasContactNumber && hasPartyInclination) {
-            tempVoterDataList.add(element);
-          }
-        } else if (selectedFilterOptionList.contains("Caste") &&
-            selectedFilterOptionList.contains("Contact number")) {
-          if (hasCaste && hasContactNumber) {
-            tempVoterDataList.add(element);
-          }
-        } else if (selectedFilterOptionList.contains("Caste") &&
-            selectedFilterOptionList.contains("Party inclination")) {
-          if (hasCaste && hasPartyInclination) {
-            tempVoterDataList.add(element);
-          }
-        } else if (selectedFilterOptionList.contains("Contact number") &&
-            selectedFilterOptionList.contains("Party inclination")) {
-          if (hasContactNumber && hasPartyInclination) {
-            tempVoterDataList.add(element);
-          }
-        } else if (selectedFilterOptionList.contains("Caste")) {
-          if (hasCaste) {
-            tempVoterDataList.add(element);
-          }
-        } else if (selectedFilterOptionList.contains("Contact number")) {
-          if (hasContactNumber) {
-            tempVoterDataList.add(element);
-          }
-        } else if (selectedFilterOptionList.contains("Party inclination")) {
-          if (hasPartyInclination) {
-            tempVoterDataList.add(element);
-          }
-        }
-      } else {
-        tempVoterDataList.add(element);
-      }
-    });
+  getFilterVoterList() {
+    getVoterList();
   }
 
   Future<void> getFamilyVoterList() async {

@@ -12,9 +12,10 @@ import '../../../data/values/dimens.dart';
 import '../../../routes/app_routes.dart';
 import '../../../themes/app_colors.dart';
 
-class AdvanceDataAnalyticsVoterView
-    extends GetView<AdvanceDataAnalyticSearchController> {
-  const AdvanceDataAnalyticsVoterView({Key? key}) : super(key: key);
+class AdvanceDataAnalyticsVoterView extends StatelessWidget {
+  final AdvanceDataAnalyticSearchController controller =
+      Get.put(AdvanceDataAnalyticSearchController());
+  AdvanceDataAnalyticsVoterView({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +27,6 @@ class AdvanceDataAnalyticsVoterView
       child: Scaffold(
         appBar: CustomAppBar(),
         body: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             AppBar(
               backgroundColor: Colors.white,
@@ -80,11 +80,9 @@ class AdvanceDataAnalyticsVoterView
                           )
                         ],
                       )).paddingAll(Dimens.paddingX2),
-              title: Obx(
-                () => Text(
-                  " Result : ${controller.tempVoterDataList.length}",
-                  style: AppStyles.tsSecondaryRegular700,
-                ),
+              title: Text(
+                " Result : ${controller.tempVoterDataList.length}",
+                style: AppStyles.tsSecondaryRegular700,
               ),
               centerTitle: true,
               actions: [
@@ -119,37 +117,37 @@ class AdvanceDataAnalyticsVoterView
               ],
             ),
             Align(
-              alignment: Alignment.topLeft,
+              alignment: Alignment.centerLeft,
               child: Obx(() => CustomCheckBox(
                   onChecked: () => controller.onCheckedSelectAll(),
                   isActive: controller.isSelectAllSelected.value,
                   name: 'Select All')),
             ),
             Expanded(
-              child: Obx(
-                () => ListView.separated(
-                  controller: controller.scrollController,
-                  physics: const BouncingScrollPhysics(),
-                  itemCount: controller.tempVoterDataList.length,
-                  itemBuilder: (context, index) {
-                    VoterResponse voterResponse =
-                        controller.tempVoterDataList[index];
-
-                    return GestureDetector(
-                      onTap: () => controller.onTapVoterCard(voterResponse),
-                      onLongPress: () =>
-                          controller.onLongPressVoterCard(voterResponse),
-                      child: VoterCard(
-                        isSelected: controller.selectedVoterDataList
-                            .contains(voterResponse),
-                        voterResponse: voterResponse,
-                      ).paddingSymmetric(horizontal: Dimens.paddingX2),
-                    );
-                  },
-                  separatorBuilder: (BuildContext context, int index) =>
-                      SizedBox(
-                    height: Dimens.gapX2,
-                  ),
+              child: ListView.separated(
+                controller: controller.scrollController,
+                physics: const BouncingScrollPhysics(),
+                itemCount: controller.tempVoterDataList.length,
+                itemBuilder: (context, index) {
+                  return Obx(
+                    () {
+                      VoterResponse voterResponse =
+                          controller.tempVoterDataList[index];
+                      return GestureDetector(
+                        onTap: () => controller.onTapVoterCard(voterResponse),
+                        onLongPress: () =>
+                            controller.onLongPressVoterCard(voterResponse),
+                        child: VoterCard(
+                          isSelected: controller.selectedVoterDataList
+                              .contains(voterResponse),
+                          voterResponse: voterResponse,
+                        ).paddingSymmetric(horizontal: Dimens.paddingX3),
+                      );
+                    },
+                  );
+                },
+                separatorBuilder: (BuildContext context, int index) => SizedBox(
+                  height: Dimens.gapX1,
                 ),
               ),
             )
@@ -161,7 +159,7 @@ class AdvanceDataAnalyticsVoterView
             child: CommonFilledButton(
                     text: "Bulk Edit",
                     onTap: () {
-                      if (controller.selectedVoterDataList.length != 1) {
+                      if (controller.selectedVoterDataList.length == 1) {
                         Get.toNamed(Routes.SINGLE_CARD_CAMPAIGN_VIEW);
                       } else if (controller.selectedVoterDataList.length > 1) {
                         Get.toNamed(Routes.BULK_CARD_EDIT,
@@ -199,3 +197,20 @@ class CustomCheckBox extends StatelessWidget {
     );
   }
 }
+
+// Widget filterOptionWidget({required List<String> filterOption}) {
+//   return GestureDetector(
+//     onTap: () {},
+//     child: Column(
+//       crossAxisAlignment: CrossAxisAlignment.start,
+//       children: [
+//         const Text('Choose Option', style: AppStyles.tsBlackBold16),
+//         const SizedBox(height: Dimens.gapX2),
+//         Column(
+//           children: List.generate( filterOption.length,
+//               (index) =>  CustomCheckBox(name: filterOption[index], isActive: false , onChecked:()=>  ,)),
+//         ),
+//       ],
+//     ),
+//   );
+// }

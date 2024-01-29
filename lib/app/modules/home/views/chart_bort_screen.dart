@@ -1,5 +1,5 @@
 import 'package:bubble/bubble.dart';
-// import 'package:cached_network_image/cached_network_image.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:prasada_political_portfolio/app/modules/home/controllers/home_controller.dart';
@@ -181,22 +181,20 @@ class screenState extends State<BotScreen> {
     bool txt = item.startsWith('/');
 
     if (img == true) {
-      return SizedBox();
-
-        // CachedNetworkImage(
-        //   imageUrl: item.replaceAll('<bot>', ''),
-        //   placeholder: (context, url) => const CircularProgressIndicator(),
-        //   errorWidget: (context, url, error) => TextButton(
-        //         onPressed: () {
-        //           // final uri = Uri.parse(url);
-        //           // _launchUrl(uri);
-        //         },
-        //         child: Text(url,
-        //             style: const TextStyle(
-        //                 decoration: TextDecoration.underline,
-        //                 color: Colors.blue,
-        //                 fontSize: 17.0)),
-        //       ));
+      return CachedNetworkImage(
+          imageUrl: item.replaceAll('<bot>', ''),
+          placeholder: (context, url) => const CircularProgressIndicator(),
+          errorWidget: (context, url, error) => TextButton(
+                onPressed: () {
+                  // final uri = Uri.parse(url);
+                  // _launchUrl(uri);
+                },
+                child: Text(url,
+                    style: const TextStyle(
+                        decoration: TextDecoration.underline,
+                        color: Colors.blue,
+                        fontSize: 17.0)),
+              ));
     } else if (btn == true) {
       var btnText = item.replaceAll('@', '');
       var btnText2 = (btnText.replaceAll('<bot>', ''));

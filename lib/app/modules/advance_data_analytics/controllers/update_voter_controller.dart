@@ -75,7 +75,7 @@ class UpdateVoterCardController extends GetxController {
   }
 
   void fillVoterData(VoterResponse response) {
-    // currentIvinId.value = response.ivinId ?? 0;
+    currentIvinId.value = response.ivinId ?? 0;
     voterIdWrapper.controller.text = response.voterId ?? '';
     voterSlip.controller.text = response.voterSlip ?? '';
     serialNumWrapper.controller.text = response.voterSerialNumber ?? '';

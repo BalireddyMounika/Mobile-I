@@ -55,7 +55,6 @@ class Dimens {
   //dividers
   static const gapX0_5 = 5.0;
   static const gapX1 = 10.0;
-  static const gapX1_5 = 15.0;
   static const gapX2 = 20.0;
   static const gapX3 = 30.0;
   static const gapX4 = 40.0;

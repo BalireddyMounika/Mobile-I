@@ -22,23 +22,20 @@ class CommonEventTitle extends StatelessWidget {
   }
 }
 
-// ignore: must_be_immutable
 class CommonEventText extends StatelessWidget {
   final String text;
-  Color? textColor = Colors.black;
 
-  CommonEventText({
+  const CommonEventText({
     Key? key,
     required this.text,
-    this.textColor,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(top: Dimens.gapX0_5, right: Dimens.gapX2),
-      child: Text(text,
-          style: AppStyles.tsBlackRegular14.copyWith(color: textColor)),
+      padding: const EdgeInsets.only(
+          top: Dimens.scaleX2, left: Dimens.scaleX3, right: Dimens.scaleX3),
+      child: Text(text, style: AppStyles.tsBlackMedium14),
     );
   }
 }

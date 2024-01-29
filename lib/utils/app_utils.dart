@@ -42,7 +42,6 @@ class AppUtils {
 
   static showSnackBar(String text) {
     Get.rawSnackbar(
-      
         snackPosition: SnackPosition.TOP,
         borderRadius: 20.0,
         borderColor: AppColors.secondaryColor,
@@ -60,22 +59,20 @@ class AppUtils {
   static getBottomSheet({
     required List<Widget> children,
     bool? ignoreSafeAres,
-    EdgeInsetsGeometry? padding,
     bool? isDisable,
   }) =>
       Get.bottomSheet(
         ListView(
           shrinkWrap: true,
-          physics: const NeverScrollableScrollPhysics(),
-          padding: padding ??
-              const EdgeInsets.symmetric(
-                horizontal: 16,
-                vertical: 20,
-              ),
+          physics: NeverScrollableScrollPhysics(),
+          padding: const EdgeInsets.symmetric(
+            horizontal: 16,
+            vertical: 20,
+          ),
           children: children,
         ),
         backgroundColor: AppColors.whiteColor,
-        shape: const RoundedRectangleBorder(
+        shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.vertical(
             top: Radius.circular(16),
           ),

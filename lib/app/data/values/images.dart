@@ -8,8 +8,6 @@ class AppImages {
   static const drawer = 'assets/images/drawer.png';
   static const chatbot = 'assets/images/chatbot.png';
   static const voter_slip = 'assets/images/voter_slip.png';
-  static const ic_profile = 'assets/images/profiles.svg';
-  static const ic_pooling_desk = 'assets/images/poolingDesk.svg';
 }
 
 class AppIcons {

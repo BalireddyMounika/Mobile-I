@@ -19,18 +19,10 @@ class VoterCard extends StatelessWidget {
               color: isSelected ?? false
                   ? AppColors.secondaryColor
                   : AppColors.whiteColor),
-          borderRadius: BorderRadius.circular(Dimens.radiusX5),
-          boxShadow: [
-            BoxShadow(
-                color: isSelected ?? false
-                    ? AppColors.secondaryColor.withOpacity(0.3)
-                    : AppColors.greyColor.withOpacity(0.6),
-                blurRadius: 2,
-                spreadRadius: 1)
-          ]),
+          borderRadius: BorderRadius.circular(Dimens.gapX1)),
       child: Padding(
         padding: const EdgeInsets.symmetric(
-            horizontal: Dimens.gapX1_5, vertical: Dimens.gapX1),
+            horizontal: Dimens.gapX1, vertical: Dimens.gapX1),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -40,18 +32,14 @@ class VoterCard extends StatelessWidget {
                   borderRadius: BorderRadius.only(
                       topRight: Radius.circular(Dimens.gapX1))),
             ),
-            SizedBox(height: Dimens.gapX0_5),
             Text(
               voterResponse.voterId ?? 'NA',
-              style: AppStyles.tsBaseBold16,
+              style: AppStyles.tsBaseRegular14,
             ),
             SizedBox(height: Dimens.gapX1),
             Row(
               children: [
-                const Icon(
-                  Icons.person_rounded,
-                  size: 22,
-                ),
+                const Icon(Icons.person),
                 const SizedBox(
                   width: Dimens.gapX1,
                 ),
@@ -59,12 +47,12 @@ class VoterCard extends StatelessWidget {
                   child: Text(
                     voterResponse.name ?? 'Na',
                     maxLines: 2,
-                    style: AppStyles.tsBlackMedium16,
+                    style: AppStyles.tsBlackRegular16,
                   ),
                 )
               ],
             ),
-            SizedBox(height: Dimens.gapX1),
+            SizedBox(height: Dimens.gapX0_5),
             Row(
               children: [
                 const Icon(Icons.family_restroom_outlined),
@@ -73,42 +61,24 @@ class VoterCard extends StatelessWidget {
                 ),
                 Text(
                   voterResponse.guardian ?? 'NA',
-                  style: AppStyles.tsBlackMedium12,
+                  style: AppStyles.tsBlackRegular12,
                 ),
               ],
             ),
-            SizedBox(height: Dimens.gapX1),
+            SizedBox(height: Dimens.gapX0_5),
             Row(
               children: [
-                Row(
-                  children: [
-                    const Icon(Icons.cake),
-                    const SizedBox(
-                      width: Dimens.gapX1,
-                    ),
-                    Text(
-                      voterResponse.age ?? 'NA',
-                      style: AppStyles.tsBlackMedium12,
-                    ),
-                  ],
+                const Icon(Icons.cake),
+                const SizedBox(
+                  width: Dimens.gapX1,
                 ),
-                Spacer(),
-                Row(
-                  children: [
-                    const Icon(Icons.male),
-                    const SizedBox(
-                      width: 10,
-                    ),
-                    Text(
-                      voterResponse.gender ?? 'Na',
-                      style: AppStyles.tsBlackMedium12,
-                    ),
-                  ],
+                Text(
+                  voterResponse.age ?? 'NA',
+                  style: AppStyles.tsBlackRegular12,
                 ),
-                Spacer()
               ],
             ),
-            SizedBox(height: Dimens.gapX1),
+            SizedBox(height: Dimens.gapX0_5),
             Row(
               children: [
                 const Icon(Icons.home_filled),
@@ -117,11 +87,23 @@ class VoterCard extends StatelessWidget {
                 ),
                 Text(
                   voterResponse.home ?? '',
-                  style: AppStyles.tsBlackMedium12,
+                  style: AppStyles.tsBlackRegular12,
                 ),
               ],
             ),
             SizedBox(height: Dimens.gapX0_5),
+            Row(
+              children: [
+                const Icon(Icons.male),
+                const SizedBox(
+                  width: 10,
+                ),
+                Text(
+                  voterResponse.gender ?? 'Na',
+                  style: AppStyles.tsBlackRegular12,
+                ),
+              ],
+            ),
           ],
         ),
       ),

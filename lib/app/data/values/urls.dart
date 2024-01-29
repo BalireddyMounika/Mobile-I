@@ -3,8 +3,6 @@ class URLs {
 
   static const baseURL = "http://13.234.70.44:8000";
   // static const baseURL = "http://172.105.37.117:8000";
-  // static const baseURL = "https://03be-223-233-110-180.ngrok-free.app";
-
   static const polling = baseURL + "/UserIvin-API/PollingStationName/";
   static const pollingstationname =
       baseURL + "/UserIvin-API/GetAllPollingStationName/";
@@ -21,8 +19,7 @@ class URLs {
       baseURL + "/UserIvin-API/GetAllpollingstationlocation/";
   // static const login = baseURL + '/UserIvin-API/login_mobile/';
   // ////////////////////
-  // static const login = baseURL + "/Ivin_1/LoginV1view/";
-  static const login = baseURL + "/UserIvin-API/login_mobile/";
+  static const login = baseURL + "/Ivin_1/LoginV1view/";
 
   static const pollingStations = baseURL + '/Ivin_1/GetpollingstationbyEmail/';
 
@@ -40,19 +37,13 @@ class URLs {
 
   static const isVotedData = baseURL + "/Ivin_1/GetIsVotedData/";
 
-  static const getVoterSerialNumber =
-      baseURL + "/Ivin_1/GetVoterSerialNumberV2/";
+  static const getVoterSerialNumber = baseURL + "/Ivin_1/GetVoterSerialNumber/";
 
   static const getPollingStationNumberName =
       baseURL + "/Ivin_1/GetpollingstationbyEmail/";
 
   static const getAllStationDetailsAtOnce =
       baseURL + '/Ivin_1/GetCountOfVotersformobile/';
-
-  static const postVoterSerialNumber =
-      baseURL + '/Ivin_1/PartyinclinationfilterV2/';
-
-  static const pollingStationDownload = baseURL + '/Ivin_1/GetPdfVotersData/';
   // //////////////////////////////////////////////////////
 
   static const campaign_post = baseURL + '/UserIvin-API/CampaignPost/';
@@ -106,8 +97,8 @@ class URLs {
   static const getAllPolingStationNumber =
       baseURL + "/UserIvin-API/GetAllPollingStationNumbers";
 
-  static const getDataAnalyticsBysearchfilter =
-      baseURL + "/UserIvin-API/DataAnalyticsGetByFields";
+  static const getDataAnalyticsBysearchfilterV2 =
+      baseURL + "/UserIvin-API/V2GetDataAnalyticsBysearchfilterV2";
 
   static const scheme = baseURL + '/UserIvin-API/GetAllSchemes/';
 
@@ -146,5 +137,10 @@ class URLs {
       baseURL + '/quickinsights/UpdateQuickInsightsForData/';
 
   // static const token =
-  //     "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzExNTE1MzMzLCJpYXQiOjE3MDM3MzkzMzMsImp0aSI6ImE4MjRhOWJmYzFjZjRlOGM5ODEzZjU2YzA1MzI4MGVkIiwidXNlcl9pZCI6MX0.3AVbK2MDJzYwOtvHL4jv8V4uc6luiOsN83xVfE0RqKw";
+  //     'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjk1NzkxODUyLCJpYXQiOjE2ODgwMTU4NTIsImp0aSI6IjEwZjg1NWMyMjkwYjQ3MTg5MmU3NDAwZGNhZWQxZTA0IiwidXNlcl9pZCI6M30.HTtK2OX8_u9ul3-6jlswZjMZYwAAdtsoGT8-yXRdcGw';
+  static const token =
+      // staging
+      "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzEwMjI3ODI5LCJpYXQiOjE3MDI0NTE4MjksImp0aSI6IjkxMTc0MjM5MjM2MjQwZmY5NTVmNThkY2I1MmQ4MjExIiwidXNlcl9pZCI6MX0.EPKbAW4NpDSK8z_cVB2ZECJrMZk3X4xykSffjNPxTjk";
+  // Production token
+  // 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA5NTMzMzQ0LCJpYXQiOjE3MDE3NTczNDQsImp0aSI6IjlmZDAzMTUzYmUzZTQ4MjdiMDM1NTdjNWFkNzMyYTM5IiwidXNlcl9pZCI6Mn0.8qoWaUFlKj0lciCQlAo_dFqieaIfcyDTBXQ40ssg5X4';
 }

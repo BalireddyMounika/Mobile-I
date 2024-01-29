@@ -10,12 +10,6 @@ class AppStyles {
     fontSize: 14,
   );
 
-  static const tsBaseBold16 = TextStyle(
-    color: AppColors.baseColor,
-    fontWeight: FontWeight.w700,
-    fontSize: 16,
-  );
-
   static const tsSecondaryRegular18 = TextStyle(
     color: AppColors.secondaryColor,
     fontWeight: FontWeight.w400,

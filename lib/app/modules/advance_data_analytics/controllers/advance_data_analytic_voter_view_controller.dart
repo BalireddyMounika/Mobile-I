@@ -1,16 +1,16 @@
 import 'package:get/get.dart';
 import 'package:prasada_political_portfolio/utils/helper/text_field_wrapper.dart';
 
-class AdvanceDataAnalyticVoterController extends GetxController {
+class Advance_data_analytic_voter_controller extends GetxController {
   TextFieldWrapper constituency = TextFieldWrapper();
   TextFieldWrapper mandal = TextFieldWrapper();
-  TextFieldWrapper pollingStationNames = TextFieldWrapper();
-  TextFieldWrapper sectionNameandNumber = TextFieldWrapper();
+  TextFieldWrapper pollingstationnames = TextFieldWrapper();
+  TextFieldWrapper sectionnameandnumber = TextFieldWrapper();
   TextFieldWrapper name = TextFieldWrapper();
   TextFieldWrapper lastname = TextFieldWrapper();
-  TextFieldWrapper lastNameLikeSearch = TextFieldWrapper();
-  TextFieldWrapper houseNo = TextFieldWrapper();
-  TextFieldWrapper voterId = TextFieldWrapper();
+  TextFieldWrapper last_name_like_search = TextFieldWrapper();
+  TextFieldWrapper house_no = TextFieldWrapper();
+  TextFieldWrapper voter_id = TextFieldWrapper();
   TextFieldWrapper filterby = TextFieldWrapper();
 
   RxString gender = RxString('');
@@ -22,13 +22,13 @@ class AdvanceDataAnalyticVoterController extends GetxController {
   void on_Reset_Page() {
     constituency.controller.text = "";
     mandal.controller.text = "";
-    pollingStationNames.controller.text = "";
-    sectionNameandNumber.controller.text = "";
+    pollingstationnames.controller.text = "";
+    sectionnameandnumber.controller.text = "";
     gender.value = "";
     name.controller.text = "";
     lastname.controller.text = "";
-    lastNameLikeSearch.controller.text = "";
-    houseNo.controller.text = "";
-    voterId.controller.text = "";
+    last_name_like_search.controller.text = "";
+    house_no.controller.text = "";
+    voter_id.controller.text = "";
   }
 }

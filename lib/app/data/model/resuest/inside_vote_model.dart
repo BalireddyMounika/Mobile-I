@@ -1,9 +1,9 @@
-class InsideVoteModel {
+class insideVoteModel {
   bool? insideVoter;
 
-  InsideVoteModel({this.insideVoter});
+  insideVoteModel({this.insideVoter});
 
-  InsideVoteModel.fromJson(Map<String, dynamic> json) {
+  insideVoteModel.fromJson(Map<String, dynamic> json) {
     insideVoter = json['inside_voter'];
   }
 

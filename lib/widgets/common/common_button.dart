@@ -7,8 +7,6 @@ class CommonFilledButton extends StatelessWidget {
   final String text;
   final VoidCallback onTap;
   final double? width;
-  final double? fontSize;
-  final FontWeight? fontWeight;
   final double height;
   final double radius;
   final Widget? suffixIcon;
@@ -17,7 +15,6 @@ class CommonFilledButton extends StatelessWidget {
   final bool? isFilled;
   final Color? color;
   final bool? isBorder;
-  final bool textColor;
 
   const CommonFilledButton({
     Key? key,
@@ -32,9 +29,6 @@ class CommonFilledButton extends StatelessWidget {
     this.color,
     this.isFilled,
     this.isBorder,
-    this.textColor = true,
-    this.fontSize,
-    this.fontWeight,
   }) : super(key: key);
 
   @override
@@ -65,21 +59,15 @@ class CommonFilledButton extends StatelessWidget {
             prefixIcon ?? SizedBox(),
             Text(
               text,
-              style: textColor
-                  ? height < 40
-                      ? isFilled ?? true
-                          ? AppStyles.tsBlackBold14.copyWith(
-                              color: AppColors.whiteColor,
-                              fontWeight: fontWeight,
-                              fontSize: fontSize)
-                          : AppStyles.tsBlackBold14
-                      : isFilled ?? true
-                          ? AppStyles.tsBlackBold18.copyWith(
-                              color: AppColors.whiteColor,
-                              fontWeight: fontWeight,
-                              fontSize: fontSize)
-                          : AppStyles.tsBlackBold18
-                  : AppStyles.tsBlackBold18.copyWith(color: AppColors.black),
+              style: height < 40
+                  ? isFilled ?? true
+                      ? AppStyles.tsBlackBold14
+                          .copyWith(color: AppColors.whiteColor)
+                      : AppStyles.tsBlackBold14
+                  : isFilled ?? true
+                      ? AppStyles.tsBlackBold18
+                          .copyWith(color: AppColors.whiteColor)
+                      : AppStyles.tsBlackBold18,
             ),
             suffixIcon ?? SizedBox(),
           ],

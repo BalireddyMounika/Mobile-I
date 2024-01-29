@@ -1,9 +1,12 @@
 import 'dart:io';
 
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../../app/data/values/dimens.dart';
+import '../../app/modules/profile/controller/profile_controller.dart';
 import '../../app/themes/app_colors.dart';
 
 class ImageContainer extends StatelessWidget {

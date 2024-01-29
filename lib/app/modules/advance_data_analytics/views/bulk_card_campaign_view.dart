@@ -36,21 +36,18 @@ class BulkCardCampaignView extends GetView<BulkCardCampaignController> {
                 mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const CommonText(text: "Caste")
-                      .paddingOnly(left: Dimens.gapX2),
+                  const CommonText(text: "Caste"),
                   const SizedBox(
                     height: Dimens.gapX1,
                   ),
                   CommonInputField(
-                    borderSide: false,
                     wrapper: controller.caste,
                     hintText: "Type here",
                   ),
                   const SizedBox(
                     height: Dimens.gapX2,
                   ),
-                  const CommonText(text: "Profession")
-                      .paddingOnly(left: Dimens.gapX2),
+                  const CommonText(text: "Profession"),
                   const SizedBox(
                     height: Dimens.gapX1,
                   ),
@@ -64,7 +61,6 @@ class BulkCardCampaignView extends GetView<BulkCardCampaignController> {
                       "Political Desgination",
                     ],
                     child: CommonInputField(
-                      borderSide: false,
                       wrapper: controller.professionNamesWrapper,
                       hintText: "Please Select Profession Name",
                       suffixIcon: const Icon(Icons.keyboard_arrow_down),
@@ -73,21 +69,18 @@ class BulkCardCampaignView extends GetView<BulkCardCampaignController> {
                   const SizedBox(
                     height: Dimens.gapX2,
                   ),
-                  const CommonText(text: "Contact Number")
-                      .paddingOnly(left: Dimens.gapX2),
+                  const CommonText(text: "Contact Number"),
                   const SizedBox(
                     height: Dimens.gapX1,
                   ),
                   CommonInputField(
-                    borderSide: false,
                     wrapper: controller.contactNumberWrapper,
                     hintText: "Type here",
                   ),
                   const SizedBox(
                     height: Dimens.gapX2,
                   ),
-                  const CommonText(text: "Party Inclination")
-                      .paddingOnly(left: Dimens.gapX2),
+                  const CommonText(text: "Party Inclination"),
                   const SizedBox(
                     height: Dimens.gapX1,
                   ),
@@ -103,7 +96,6 @@ class BulkCardCampaignView extends GetView<BulkCardCampaignController> {
                       "Yuvajana Sramika Rythu Congress Party"
                     ],
                     child: CommonInputField(
-                      borderSide: false,
                       wrapper: controller.partyInclinationWrapper,
                       hintText: "Please Select Party Inclination Name",
                       suffixIcon: const Icon(Icons.keyboard_arrow_down),
@@ -122,7 +114,6 @@ class BulkCardCampaignView extends GetView<BulkCardCampaignController> {
                   ),
                   SizedBox(height: Dimens.gapX1),
                   Obx(() => CommonInputField(
-                        borderSide: false,
                         wrapper: controller.interestedToJoinPartyWrapper,
                         hintText: "Information Given By Person",
                         isEnabled: controller.interestedToJoinParty.value,
@@ -135,7 +126,6 @@ class BulkCardCampaignView extends GetView<BulkCardCampaignController> {
                     height: Dimens.gapX1,
                   ),
                   Obx(() => CommonInputField(
-                        borderSide: false,
                         wrapper: controller.interestedToJoinPartyComments,
                         hintText: "Comments",
                         isEnabled: controller.interestedToJoinParty.value,
@@ -145,41 +135,39 @@ class BulkCardCampaignView extends GetView<BulkCardCampaignController> {
                         },
                       )),
                   SizedBox(height: Dimens.gapX1),
-                  // Obx(
-                  //   () => CustomCheckBox(
-                  //     name: "Dissident",
-                  //     isActive: controller.isDissidentChecked.value,
-                  //     onChecked: () {
-                  //       controller.isDissidentChecked.toggle();
-                  //     },
-                  //   ),
-                  // ),
-                  // SizedBox(height: Dimens.gapX1),
-                  // Obx(
-                  //   () => CommonInputField(
-                  //     borderSide: false,
-                  //     wrapper: controller.dissident,
-                  //     hintText: "Information Given By Person",
-                  //     isEnabled: controller.isDissidentChecked.value,
-                  //     onChanged: (text) {
-                  //       controller.dissident.controller.text = text;
-                  //     },
-                  //   ),
-                  // ),
-                  // const SizedBox(
-                  //   height: Dimens.gapX1,
-                  // ),
-                  // Obx(() => CommonInputField(
-                  //       borderSide: false,
-                  //       wrapper: controller.dissidentCommentsWrapper,
-                  //       hintText: "Comments",
-                  //       isEnabled: controller.isDissidentChecked.value,
-                  //       onChanged: (text) {
-                  //         controller.dissidentCommentsWrapper.controller.text =
-                  //             text;
-                  //       },
-                  //     )),
-                  // SizedBox(height: Dimens.gapX1),
+                  Obx(
+                    () => CustomCheckBox(
+                      name: "Dissident",
+                      isActive: controller.isDissidentChecked.value,
+                      onChecked: () {
+                        controller.isDissidentChecked.toggle();
+                      },
+                    ),
+                  ),
+                  SizedBox(height: Dimens.gapX1),
+                  Obx(
+                    () => CommonInputField(
+                      wrapper: controller.dissident,
+                      hintText: "Information Given By Person",
+                      isEnabled: controller.isDissidentChecked.value,
+                      onChanged: (text) {
+                        controller.dissident.controller.text = text;
+                      },
+                    ),
+                  ),
+                  const SizedBox(
+                    height: Dimens.gapX1,
+                  ),
+                  Obx(() => CommonInputField(
+                        wrapper: controller.dissidentCommentsWrapper,
+                        hintText: "Comments",
+                        isEnabled: controller.isDissidentChecked.value,
+                        onChanged: (text) {
+                          controller.dissidentCommentsWrapper.controller.text =
+                              text;
+                        },
+                      )),
+                  SizedBox(height: Dimens.gapX1),
                   Obx(
                     () => CustomCheckBox(
                       name: "Is Voted",
@@ -190,14 +178,12 @@ class BulkCardCampaignView extends GetView<BulkCardCampaignController> {
                     ),
                   ),
                   SizedBox(height: Dimens.gapX1),
-                  const CommonText(text: "Contact Mode")
-                      .paddingOnly(left: Dimens.gapX2),
+                  const CommonText(text: "Contact Mode"),
                   const SizedBox(
                     height: Dimens.gapX1,
                   ),
                   ListSelector(
                       child: CommonInputField(
-                        borderSide: false,
                         wrapper: controller.contactModeWrapper,
                         hintText: "Select",
                         suffixIcon: const Icon(Icons.keyboard_arrow_down),
@@ -218,7 +204,6 @@ class BulkCardCampaignView extends GetView<BulkCardCampaignController> {
                   ),
                   Obx(
                     () => CommonInputField(
-                      borderSide: false,
                       wrapper: controller.contactModeContactByWrapper,
                       hintText: "Contact By",
                       isEnabled: controller.isContactMoodTeamContacted.value,
@@ -232,7 +217,6 @@ class BulkCardCampaignView extends GetView<BulkCardCampaignController> {
                     height: Dimens.gapX2,
                   ),
                   Obx(() => CommonInputField(
-                        borderSide: false,
                         wrapper: controller.contactModeCommentsWrapper,
                         hintText: "Comments",
                         isEnabled: controller.isContactMoodTeamContacted.value,
@@ -244,17 +228,15 @@ class BulkCardCampaignView extends GetView<BulkCardCampaignController> {
                   const SizedBox(
                     height: Dimens.gapX2,
                   ),
-                  const CommonText(text: "Master Data")
-                      .paddingOnly(left: Dimens.gapX2),
+                  const CommonText(text: "Master Data"),
                   const SizedBox(
                     height: Dimens.gapX1,
                   ),
-                  CommonText(text: "Last Name").paddingOnly(left: Dimens.gapX2),
+                  CommonText(text: "Last Name"),
                   const SizedBox(
                     height: Dimens.gapX1,
                   ),
                   CommonInputField(
-                    borderSide: false,
                     wrapper: controller.lastname,
                     hintText: "Select",
                   ),

@@ -308,10 +308,10 @@ class UpdateVoterDataView extends GetView<UpdateVoterCardController> {
                 controller.resetPage();
               },
               text: AppStrings.cancel,
-            ).paddingSymmetric(vertical: Dimens.paddingX2),
+            ).paddingSymmetric(vertical: Dimens.paddingX1),
           ),
         ],
-      ).paddingSymmetric(horizontal: Dimens.paddingX2),
+      ).paddingSymmetric(horizontal: Dimens.paddingX3),
     );
   }
 }

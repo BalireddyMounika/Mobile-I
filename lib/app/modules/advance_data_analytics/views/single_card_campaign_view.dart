@@ -54,8 +54,7 @@ class SingleCardCampaignView extends GetView<SingleCardCampaignController> {
                               )),
                         ],
                       ),
-                      const CommonText(text: "Caste")
-                          .paddingOnly(left: Dimens.paddingX2),
+                      const CommonText(text: "Caste"),
                       const SizedBox(
                         height: Dimens.gapX1,
                       ),
@@ -67,8 +66,7 @@ class SingleCardCampaignView extends GetView<SingleCardCampaignController> {
                       const SizedBox(
                         height: Dimens.gapX2,
                       ),
-                      const CommonText(text: "Profession")
-                          .paddingOnly(left: Dimens.paddingX2),
+                      const CommonText(text: "Profession"),
                       const SizedBox(
                         height: Dimens.gapX1,
                       ),
@@ -98,8 +96,7 @@ class SingleCardCampaignView extends GetView<SingleCardCampaignController> {
                       const SizedBox(
                         height: Dimens.gapX2,
                       ),
-                      const CommonText(text: "Contact Number")
-                          .paddingOnly(left: Dimens.paddingX2),
+                      const CommonText(text: "Contact Number"),
                       const SizedBox(
                         height: Dimens.gapX1,
                       ),
@@ -111,8 +108,7 @@ class SingleCardCampaignView extends GetView<SingleCardCampaignController> {
                       const SizedBox(
                         height: Dimens.gapX2,
                       ),
-                      const CommonText(text: "Party Inclination")
-                          .paddingOnly(left: Dimens.paddingX2),
+                      const CommonText(text: "Party Inclination"),
                       const SizedBox(
                         height: Dimens.gapX1,
                       ),
@@ -144,13 +140,11 @@ class SingleCardCampaignView extends GetView<SingleCardCampaignController> {
                       const SizedBox(
                         height: Dimens.gapX2,
                       ),
-                      const CommonText(text: "Strength")
-                          .paddingOnly(left: Dimens.paddingX2),
+                      const CommonText(text: "Strength"),
                       const SizedBox(
                         height: Dimens.gapX1,
                       ),
                       Obx(() => CommonInputField(
-                            maxLine: 3,
                             wrapper: controller.strength,
                             hintText: "Type here",
                             isEnabled: controller.person_alive_status.value,
@@ -163,7 +157,6 @@ class SingleCardCampaignView extends GetView<SingleCardCampaignController> {
                         height: Dimens.gapX1,
                       ),
                       Obx(() => CommonInputField(
-                            maxLine: 3,
                             wrapper: controller.weakness,
                             hintText: "Type here",
                             isEnabled: controller.person_alive_status.value,

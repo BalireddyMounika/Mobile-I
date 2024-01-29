@@ -27,7 +27,7 @@ class ProfileAboutYou extends GetView<ProfileController> {
       body: SingleChildScrollView(
         child: Center(
           child: Column(children: [
-            CustomProfileStepper().paddingZero,
+            CustomProfileStepper(),
             const SizedBox(
               height: Dimens.scaleX1,
             ),
@@ -44,119 +44,89 @@ class ProfileAboutYou extends GetView<ProfileController> {
                 children: [
                   Obx(() => controller.selectedLogo1Imagepath.value.isEmpty
                       ? ImageContainer(
-                          imagePath: controller.selectedLogo1Imagepath.value,
-                          onTapOpenGallery: () {
-                            controller.getLogo1Image(ImageSource.gallery);
-                            Get.back();
-                          },
-                          onTapOpenCamera: () {
-                            controller.getLogo1Image(ImageSource.camera);
-                            Get.back();
-                          },
-                          height: Dimens.imageScaleX24,
-                          width: Dimens.imageScaleX20,
-                        )
+                      imagePath: controller.selectedLogo1Imagepath.value,
+                      onTapOpenGallery: () {
+                        controller.getLogo1Image(ImageSource.gallery);
+                        Get.back();
+                      },
+                      onTapOpenCamera: () {
+                        controller.getLogo1Image(ImageSource.camera);
+                        Get.back();
+                      }, height:Dimens.imageScaleX24, width: Dimens.imageScaleX20,)
                       : ImageOpenContainer(
-                          openedImagePath:
-                              controller.selectedLogo1Imagepath.value,
-                          onTapRemoveImage: () {
-                            controller.removeLogo1Image();
-                          },
-                          height: Dimens.imageScaleX24,
-                          width: Dimens.imageScaleX20,
-                        )),
+                      openedImagePath:
+                      controller.selectedLogo1Imagepath.value,
+                      onTapRemoveImage: () {
+                        controller.removeLogo1Image();
+                      }, height: Dimens.imageScaleX24, width: Dimens.imageScaleX20,)),
                   Obx(() => controller.selectedLogo2Imagepath.value.isEmpty
                       ? ImageContainer(
-                          imagePath: controller.selectedLogo2Imagepath.value,
-                          onTapOpenGallery: () {
-                            controller.getLogo2Image(ImageSource.gallery);
-                            Get.back();
-                          },
-                          onTapOpenCamera: () {
-                            controller.getLogo2Image(ImageSource.camera);
-                            Get.back();
-                          },
-                          height: Dimens.imageScaleX24,
-                          width: Dimens.imageScaleX20,
-                        )
+                      imagePath: controller.selectedLogo2Imagepath.value,
+                      onTapOpenGallery: () {
+                        controller.getLogo2Image(ImageSource.gallery);
+                        Get.back();
+                      },
+                      onTapOpenCamera: () {
+                        controller.getLogo2Image(ImageSource.camera);
+                        Get.back();
+                      }, height: Dimens.imageScaleX24, width: Dimens.imageScaleX20,)
                       : ImageOpenContainer(
-                          openedImagePath:
-                              controller.selectedLogo2Imagepath.value,
-                          onTapRemoveImage: () {
-                            controller.removeLogo2Image();
-                          },
-                          height: Dimens.imageScaleX24,
-                          width: Dimens.imageScaleX20,
-                        )),
+                      openedImagePath:
+                      controller.selectedLogo2Imagepath.value,
+                      onTapRemoveImage: () {
+                        controller.removeLogo2Image();
+                      }, height: Dimens.imageScaleX24, width: Dimens.imageScaleX20,)),
                   Obx(() => controller.selectedLogo3Imagepath.value.isEmpty
                       ? ImageContainer(
-                          imagePath: controller.selectedLogo3Imagepath.value,
-                          onTapOpenGallery: () {
-                            controller.getLogo3Image(ImageSource.gallery);
-                            Get.back();
-                          },
-                          onTapOpenCamera: () {
-                            controller.getLogo3Image(ImageSource.camera);
-                            Get.back();
-                          },
-                          height: Dimens.imageScaleX24,
-                          width: Dimens.imageScaleX20,
-                        )
+                      imagePath: controller.selectedLogo3Imagepath.value,
+                      onTapOpenGallery: () {
+                        controller.getLogo3Image(ImageSource.gallery);
+                        Get.back();
+                      },
+                      onTapOpenCamera: () {
+                        controller.getLogo3Image(ImageSource.camera);
+                        Get.back();
+                      }, height: Dimens.imageScaleX24, width: Dimens.imageScaleX20,)
                       : ImageOpenContainer(
-                          openedImagePath:
-                              controller.selectedLogo3Imagepath.value,
-                          onTapRemoveImage: () {
-                            controller.removeLogo3Image();
-                          },
-                          height: Dimens.imageScaleX24,
-                          width: Dimens.imageScaleX20,
-                        )),
+                      openedImagePath:
+                      controller.selectedLogo3Imagepath.value,
+                      onTapRemoveImage: () {
+                        controller.removeLogo3Image();
+                      }, height: Dimens.imageScaleX24, width: Dimens.imageScaleX20,)),
                   Obx(() => controller.selectedLogo4Imagepath.value.isEmpty
                       ? ImageContainer(
-                          imagePath: controller.selectedLogo4Imagepath.value,
-                          onTapOpenGallery: () {
-                            controller.getLogo4Image(ImageSource.gallery);
-                            Get.back();
-                          },
-                          onTapOpenCamera: () {
-                            controller.getLogo4Image(ImageSource.camera);
-                            Get.back();
-                          },
-                          height: Dimens.imageScaleX24,
-                          width: Dimens.imageScaleX20,
-                        )
+                      imagePath: controller.selectedLogo4Imagepath.value,
+                      onTapOpenGallery: () {
+                        controller.getLogo4Image(ImageSource.gallery);
+                        Get.back();
+                      },
+                      onTapOpenCamera: () {
+                        controller.getLogo4Image(ImageSource.camera);
+                        Get.back();
+                      }, height: Dimens.imageScaleX24, width: Dimens.imageScaleX20,)
                       : ImageOpenContainer(
-                          openedImagePath:
-                              controller.selectedLogo4Imagepath.value,
-                          onTapRemoveImage: () {
-                            controller.removeLogo4Image();
-                          },
-                          height: Dimens.imageScaleX24,
-                          width: Dimens.imageScaleX20,
-                        )),
+                      openedImagePath:
+                      controller.selectedLogo4Imagepath.value,
+                      onTapRemoveImage: () {
+                        controller.removeLogo4Image();
+                      }, height: Dimens.imageScaleX24, width: Dimens.imageScaleX20,)),
                   Obx(() => controller.selectedLogo5Imagepath.value.isEmpty
                       ? ImageContainer(
-                          imagePath: controller.selectedLogo5Imagepath.value,
-                          onTapOpenGallery: () {
-                            controller.getLogo5Image(ImageSource.gallery);
-                            Get.back();
-                          },
-                          onTapOpenCamera: () {
-                            controller.getLogo5Image(ImageSource.camera);
-                            Get.back();
-                          },
-                          height: Dimens.imageScaleX24,
-                          width: Dimens.imageScaleX20,
-                        )
+                      imagePath: controller.selectedLogo5Imagepath.value,
+                      onTapOpenGallery: () {
+                        controller.getLogo5Image(ImageSource.gallery);
+                        Get.back();
+                      },
+                      onTapOpenCamera: () {
+                        controller.getLogo5Image(ImageSource.camera);
+                        Get.back();
+                      }, height: Dimens.imageScaleX24, width: Dimens.imageScaleX20,)
                       : ImageOpenContainer(
-                          openedImagePath:
-                              controller.selectedLogo5Imagepath.value,
-                          onTapRemoveImage: () {
-                            controller.removeLogo5Image();
-                          },
-                          height: Dimens.imageScaleX24,
-                          width: Dimens.imageScaleX20,
-                        )),
+                      openedImagePath:
+                      controller.selectedLogo5Imagepath.value,
+                      onTapRemoveImage: () {
+                        controller.removeLogo5Image();
+                      }, height: Dimens.imageScaleX24, width: Dimens.imageScaleX20,)),
                 ],
               ),
             ),
@@ -169,22 +139,20 @@ class ProfileAboutYou extends GetView<ProfileController> {
               ),
               Obx(() => controller.selectedProfilePicImagepath.value.isEmpty
                   ? CommonSmallImageContainer(
-                      imagePath: controller.selectedProfilePicImagepath.value,
-                      onTapOpenGallery: () {
-                        controller.getLogo6Image(ImageSource.gallery);
-                        Get.back();
-                      },
-                      onTapOpenCamera: () {
-                        controller.getLogo6Image(ImageSource.camera);
-                        Get.back();
-                      })
+                  imagePath: controller.selectedProfilePicImagepath.value,
+                  onTapOpenGallery: () {
+                    controller.getLogo6Image(ImageSource.gallery);
+                    Get.back();
+                  },
+                  onTapOpenCamera: () {
+                    controller.getLogo6Image(ImageSource.camera);
+                    Get.back();
+                  })
                   : openedSmallImageContainer(
-                      openedImagePath:
-                          controller.selectedProfilePicImagepath.value,
-                      onTapRemoveImage: () {
-                        controller.removeLogo6Image();
-                      },
-                    )),
+                  openedImagePath: controller.selectedProfilePicImagepath.value,
+                  onTapRemoveImage: () {
+                    controller.removeLogo6Image();
+                  },)),
             ]),
             const SizedBox(
               height: Dimens.scaleX2,
@@ -218,13 +186,8 @@ class ProfileAboutYou extends GetView<ProfileController> {
             const SizedBox(
               height: Dimens.scaleX2,
             ),
-            CommonInputField(
-              wrapper: controller.age,
-              hintText: 'Age',
-            ),
-            SizedBox(
-              height: Dimens.scaleX2,
-            ),
+            CommonInputField(wrapper:controller.age,hintText:'Age',),
+            SizedBox(height: Dimens.scaleX2,),
             Row(
               children: [
                 const Text(
@@ -232,7 +195,7 @@ class ProfileAboutYou extends GetView<ProfileController> {
                   style: AppStyles.tsSecondaryRegular700,
                 ),
                 Obx(
-                  () => Radio(
+                      () => Radio(
                     value: "MALE",
                     groupValue: controller.genderValue.value,
                     onChanged: (value) {
@@ -241,12 +204,13 @@ class ProfileAboutYou extends GetView<ProfileController> {
                     },
                   ),
                 ),
+
                 const Text(
                   "Male",
                   style: AppStyles.tsSecondaryRegular18,
                 ),
                 Obx(
-                  () => Radio(
+                      () => Radio(
                     value: "FEMALE",
                     groupValue: controller.genderValue.value,
                     onChanged: (value) {
@@ -271,11 +235,7 @@ class ProfileAboutYou extends GetView<ProfileController> {
             const SizedBox(
               height: Dimens.scaleX2,
             ),
-            CommonInputField(
-              wrapper: controller.address,
-              hintText: "Address",
-              maxLine: 3,
-            ),
+            CommonInputField(wrapper: controller.address, hintText: "Address",maxLine:3,),
             const SizedBox(
               height: Dimens.scaleX2,
             ),
@@ -313,14 +273,10 @@ class ProfileAboutYou extends GetView<ProfileController> {
                 onTap: () {
                   Get.toNamed(Routes.PROFILE_CANDIDATE_INFO);
                 }),
-            const SizedBox(
-              height: Dimens.scaleX4,
-            ),
-            CommonResetButton(
-                text: "Reset",
-                onTap: () {
-                  controller.onResetAboutPage();
-                })
+            const SizedBox(height: Dimens.scaleX4,),
+            CommonResetButton(text:"Reset", onTap:(){
+              controller.onResetAboutPage();
+            })
           ]).paddingSymmetric(horizontal: Dimens.paddingX3),
         ),
       ),

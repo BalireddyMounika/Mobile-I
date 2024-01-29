@@ -11,7 +11,7 @@ class CommonText extends StatelessWidget {
       alignment: Alignment.centerLeft,
       child: Text(
         text,
-        style: AppStyles.tsBlackRegular16,
+        style: AppStyles.tsSecondaryRegular18,
       ),
     );
   }
